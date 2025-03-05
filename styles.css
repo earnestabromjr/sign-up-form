@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    --myfont: "CaskaydiaCove NF", Consolas, "Comic Sans MS", sans-serif;
+    font-family: var(--myfont), sans-serif;
+    --divheight: 30vh;
+    --divwidth: 50vw;
+    --accent-color: #596D48
+}
+
+@font-face {
+    font-family: Norse;
+    src: url('assets/Norse-Bold.otf') format('truetype');
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+.side-logo {
+    position: static;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height of the viewport height */
+    width: 50vw; /* Half of the viewport width */
+    background: url(assets/lexi-laginess-hotel_photo.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.text {
+    position: static;
+    top: 0;
+    right: 0;
+    display: block;
+    margin: 0 10px;
+    padding: 10px;
+    height: var(--divheight);
+    width: var(--divwidth);
+    background: rgba(243, 242, 242, 0.84);
+}
+
+.form {
+    display: block;
+    position: static;
+    right: 0;
+    bottom: 0;
+    flex: auto;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+
+form div {
+    flex-direction: row;
+    display: flex;
+    flex-basis: 50%;
+    justify-content: space-around;
+    margin: 0 10px;
+    padding: 10px;
+    height: auto;
+    width: var(--divwidth);
+    background: rgba(243, 242, 242, 0.84);
+}
+
+div label {
+    display: flex;
+    margin: 0 10px;
+    padding: 10px;
+    height: auto;
+    width: var(--divwidth);
+    background: rgba(243, 242, 242, 0.84);
+}
+
+input[type=text], input[type=email], input[type=password], input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=tel]:focus {
+    border: 1px solid #0000ff;
+}
+
+input[type=password]:invalid {
+    border: 1px solid red;
+}
+
+button {
+    width: 20%;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*form div {*/
+/*    !*display: flex;*!*/
+/*    justify-content: flex-start;*/
+/*    flex-direction: row;*/
+/*    margin: 0 10px;*/
+/*    padding: 10px;*/
+/*}*/
+
+.image-container {
+    position: relative;
+    display: inline-block; /* Adjust as needed */
+    font-family: Norse, sans-serif;
+    color: white;
+    width: calc(var(--divwidth) / 3);
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    z-index: 1; /* Ensure it is behind the image */
+}
+
+img {
+    display: block;
+    margin: 0 10px;
+    padding: 10px;
+    width: 50px; /* Set the desired width here */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Ensure the image is above the background */
+    top: 50px;
+    z-index: 2; /* Ensure it is above the background */
+}
