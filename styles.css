@@ -9,6 +9,11 @@ html {
   --divwidth: 50vw;
   --accent-color: #596d48;
 }
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
 
 @font-face {
   font-family: Norse;
@@ -31,13 +36,22 @@ a {
   top: 0;
   left: 0;
   height: 100vh; /* Full height of the viewport height */
-  width: 50vw; /* Half of the viewport width */
+  width: 25vw; /* Half of the viewport width */
   background: url(assets/lexi-laginess-hotel_photo.jpg) no-repeat center center;
   background-size: cover;
 }
 
+.right-side {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding: 10px;
+  background: rgba(243, 242, 242, 0.84);
+}
+
 .text {
-  position: static;
   top: 0;
   right: 0;
   display: block;
@@ -56,6 +70,8 @@ a {
   flex: auto;
   margin: 0 10px;
   padding: 10px;
+  width: var(--divwidth);
+  background: rgb(255, 255, 255);
 }
 
 form div {
@@ -66,8 +82,6 @@ form div {
   margin: 0 10px;
   padding: 10px;
   height: auto;
-  width: var(--divwidth);
-  background: rgba(243, 242, 242, 0.84);
 }
 
 div label {
@@ -92,11 +106,15 @@ input[type="tel"] {
   box-sizing: border-box;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="tel"]:focus {
+input:focus {
   border: 1px solid #0000ff;
+}
+input[type="password"]:valid {
+  border: 1px solid green;
+}
+input[type="password"]:invalid,
+input[type="email"]:invalid {
+  border: 1px solid red;
 }
 
 input[type="password"]:invalid {
